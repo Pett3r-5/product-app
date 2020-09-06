@@ -2,27 +2,27 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { FlatList, Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-export default function ProductsList({ navigation }) {
+export default function ProductsList({ navigation }:any) {
 
   return (
     <View style={styles.container}>
         <FlatList style={{width: "100%"}}
           data={[
-            {title: 'Product', org: "Pão dos pobres"},
-            {title: 'Product 1', org: "Pão dos pobres"},
-            {title: 'Product 1', org: "Pão dos pobres"},
-            {title: 'Evento 2', org: "Pão dos pobres"},
-            {title: 'Evento 3', org: "Pão dos pobres"},
-            {title: 'Evento 4', org: "Pão dos pobres"},
-            {title: 'Evento 5', org: "Pão dos pobres"},
-            {title: 'Evento 6', org: "Pão dos pobres"},
-            {title: 'Evento 7', org: "Pão dos pobres"},
-            {title: 'Evento 8', org: "Pão dos pobres"},
+            {title: 'Product', org: "teste"},
+            {title: 'Product 0', org: "teste"},
+            {title: 'Product 1', org: "teste"},
+            {title: 'Product 2', org: "teste"},
+            {title: 'Product 3', org: "teste"},
+            {title: 'Product 4', org: "teste"},
+            {title: 'Product 5', org: "teste"},
+            {title: 'Product 6', org: "teste"},
+            {title: 'Product 7', org: "teste"},
+            {title: 'Product 8', org: "teste"},
           ]}
-          renderItem={({item}) => (<TouchableOpacity onPress={() =>  navigation.navigate('EventExpanded', { name: item.title, org: item.org })}>
+          renderItem={({item}) => (<TouchableOpacity onPress={() =>  navigation.navigate('ProductExpanded', { name: item.title, org: item.org })}>
               <View style={styles.cardContainer}>
                                       <View style={{width:"30%", marginRight:"2%"}}>
-                                        <Image resizeMode="cover" style={{height: "100%" ,width: "100%"}} source={require('./images/dolarIcon.png')}/>
+                                        <Image resizeMode="cover" style={{height: "100%" ,width: "100%"}} source={require('../../assets/images/dolarIcon.png')}/>
                                       </View>
                                       <View style={{padding: 10, backgroundColor: "#EEEEEE", width:"65%",marginLeft:"2%"}}>
                                         <Text style={styles.itemTitle}>{item.title}</Text>
@@ -33,14 +33,13 @@ export default function ProductsList({ navigation }) {
                                           }}
                                         />
                                         
-                                        <View contentContainerStyle={{display: "flex", flexDirection: "row", justifyContent: "flex-start", alignItems: "left"}}>
-                                          <Text style={{fontSize:15, lineHeight: 30, fontFamily: "sans-serif"}}>{item.org} • 654 • 7km</Text>
+                                        <View style={{display: "flex", flexDirection: "row"}}>
+                                          <Text style={{fontSize:15, lineHeight: 30, fontFamily: "sans-serif"}}>{item.org} • 654 • 7 unidades</Text>
                               
                                         </View>
 
-                                        <View contentContainerStyle={{marginVertical: 5, display: "flex", flexDirection: "row", justifyContent: "flex-start", alignItems: "left"}}>
-                                          <Image resizeMode="cover" style={{height: 20 ,width: 20, marginHorizontal:2, marginRight: 2}} source={require('./images/dolarIcon.png')}/>
-                                          <Text style={{marginLeft: 5, fontSize:14, lineHeight: 30, fontFamily: "sans-serif"}}>15 ago. - 16 ago.</Text>
+                                        <View style={{marginVertical: 5, display: "flex", flexDirection: "row"}}>
+                                          <Text style={{marginLeft: 5, fontSize:14, lineHeight: 30, fontFamily: "sans-serif"}}>R$ 27,99</Text>
                                         </View>
                                         <FlatList style={{width: "100%", marginTop: 5, display: "flex", flexDirection: "row"}}
                                           data={tags1}
@@ -56,8 +55,8 @@ export default function ProductsList({ navigation }) {
 }
 
 const tags1 = [
-  {name: "informatica"},
-  {name:"excel"}
+  {name: "tag1"},
+  {name:"tag2"}
 ]
 
 const styles = StyleSheet.create({

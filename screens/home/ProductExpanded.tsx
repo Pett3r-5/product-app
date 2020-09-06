@@ -1,21 +1,18 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import {ProductsList} from './ProductsList'
 import { FlatList, Image, StyleSheet, Text, View, SafeAreaView, ScrollView  } from 'react-native';
-import { WebView } from 'react-native-webview';
-import Map from './Map'
+import Map from '../contact/Map'
 
 const tags1 = [
     {name: "informatica"},
     {name:"excel"}
   ]
 
-export default function ProductExpanded({route}) {
+export default function ProductExpanded({route}:any) {
 
     return (
-      <ScrollView nestedScrollEnabled={true} style={{flex: 1, padding: 20,
-        align: 'top', backgroundColor: "white", paddingBottom: 30}}>
-        <View style={{padding: 5, boxShadow: "1px 1px 3px 1px #9E9E9E", backgroundColor: "white", shadowRadius: 1, marginHorizontal: 2, marginVertical: 10, shadowOffset: { width: 5, height: 5 },
+      <ScrollView nestedScrollEnabled={true} style={{flex: 1, padding: 20, backgroundColor: "white", paddingBottom: 30}}>
+        <View style={{padding: 5, backgroundColor: "white", shadowRadius: 1, marginHorizontal: 2, marginVertical: 10, shadowOffset: { width: 5, height: 5 },
   shadowColor: '#9E9E9E', shadowOpacity: 1, elevation: 3}}>
             <Text style={{fontFamily: "sans-serif", fontSize: 17}}>
                     {route.params.org}
@@ -31,20 +28,20 @@ export default function ProductExpanded({route}) {
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus venenatis, erat nec scelerisque vestibulum, neque felis sollicitudin sem, sed commodo odio ex eu risus. Ut in magna consectetur, ultrices augue non, ullamcorper quam. Curabitur tempor, ex eget sagittis dictum, ex elit auctor magna, eu consequat nisi quam eu nisl. Sed fringilla est ve
         </Text>
 
-        <View contentContainerStyle={{minHeight: 100, flexGrow:1, padding: 20, marginVertical: 30, justifyContent: "center", backgroundColor: "#EEEEEE"}}>
-            <View contentContainerStyle={{marginVertical: 5, flexGrow:1, display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "left"}}>
-            <View contentContainerStyle={{display: "flex", flexGrow:1, flexDirection: "row", justifyContent: "flex-start", alignItems: "left"}}>
-                                          <Image resizeMode="contain" style={{height: 20 ,width: 20, marginHorizontal:2, marginRight: 2}} source={require('./images/dolarIcon.png')}/>
+        <View style={{minHeight: 100, flexGrow:1, padding: 20, marginVertical: 30, justifyContent: "center", backgroundColor: "#EEEEEE"}}>
+            <View style={{marginVertical: 5, flexGrow:1, display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+            <View style={{display: "flex", flexGrow:1, flexDirection: "row", justifyContent: "flex-start"}}>
+                                          <Image resizeMode="contain" style={{height: 20 ,width: 20, marginHorizontal:2, marginRight: 2}} source={require('../../assets/images/dolarIcon.png')}/>
                                           <Text style={{marginLeft: 5, fontSize:14, lineHeight: 30, fontFamily: "sans-serif"}}>15 ago. - 16 ago.</Text>
             </View>
-                                          <View contentContainerStyle={{display: "flex", flexGrow:1, flexDirection: "row", justifyContent: "flex-start", alignItems: "left"}}>
-                                          <Image resizeMode="contain" style={{height: 20 ,width: 20, marginHorizontal:2, marginRight: 2}} source={require('./images/dolarIcon.png')}/>
+                                          <View style={{display: "flex", flexGrow:1, flexDirection: "row", justifyContent: "flex-start"}}>
+                                          <Image resizeMode="contain" style={{height: 20 ,width: 20, marginHorizontal:2, marginRight: 2}} source={require('../../assets/images/dolarIcon.png')}/>
                                           <Text style={{marginLeft: 5, fontSize:14, lineHeight: 30, fontFamily: "sans-serif"}}>15h - 16h</Text>
                                           </View>
             </View>
             
-            <View contentContainerStyle={{marginVertical: 5,flexGrow:1, display: "flex", flexDirection: "row", justifyContent: "flex-start", alignItems: "left"}}>
-                                          <Image resizeMode="contain" style={{height: 20 ,width: 20, marginHorizontal:2, marginRight: 2}} source={require('./images/dolarIcon.png')}/>
+            <View style={{marginVertical: 5,flexGrow:1, display: "flex", flexDirection: "row", justifyContent: "flex-start"}}>
+                                          <Image resizeMode="contain" style={{height: 20 ,width: 20, marginHorizontal:2, marginRight: 2}} source={require('../../assets/images/dolarIcon.png')}/>
                                           <Text style={{marginLeft: 5, fontSize:14, lineHeight: 30, fontFamily: "sans-serif"}}>Centro histórico, Porto Alegre</Text>
                                           
                                 
@@ -58,13 +55,7 @@ export default function ProductExpanded({route}) {
         </View>
         
         
-        <View style={{ marginBottom: 60, display: "flex",
-        alignItems: "center",
-        justifyContent: "center"}}>
-            <View style={{align: "center"}}>
-                <Map />
-            </View>
-        </View>
+        
         
 
     </ScrollView>

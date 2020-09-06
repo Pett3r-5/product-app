@@ -8,6 +8,8 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import TabOneScreen from '../screens/TabOneScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
+import ProductList from '../screens/home/ProductsList';
+import Home from '../screens/home/Home';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
@@ -17,27 +19,44 @@ export default function BottomTabNavigator() {
   const colorScheme = useColorScheme();
 
   return (
-    <TopTab.Navigator
+    <BottomTab.Navigator
       initialRouteName="TabOne"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <TopTab.Screen
         name="TabOne"
-        component={TabOneNavigator}
+        component={Home}
         options={{
-          title:"tab one",
+          title:"Início",
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
       />
-      <TopTab.Screen
+      <BottomTab.Screen
         name="TabTwo"
-        
         component={TabTwoNavigator}
         options={{
-          title:"tab two",
+          title:"Carrinho",
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+        
+      />
+
+      <BottomTab.Screen
+        name="TabThree"
+        component={TabTwoNavigator}
+        options={{
+          title:"Conta",
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
       />
-    </TopTab.Navigator>
+      <BottomTab.Screen
+        name="TabFour"
+        component={TabTwoNavigator}
+        options={{
+          title:"Contato",
+          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+        }}
+      />
+    </BottomTab.Navigator>
   );
 }
 

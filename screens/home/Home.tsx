@@ -7,21 +7,19 @@ import ProductExpanded from './ProductExpanded'
 
 import { createStackNavigator } from '@react-navigation/stack';
 
-const Stack = createStackNavigator();
+const HomeStack = createStackNavigator();
 
-export default function App() {
+export default function Home() {
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
+      <HomeStack.Navigator>
+        <HomeStack.Screen
           name="ProductsList"
           component={ProductsList}
           options={{ title: 'Products' }}
         />
-        <Stack.Screen name="ProductExpanded" component={ProductExpanded} options={{ title: 'Product' }}/>
-      </Stack.Navigator>
-    </NavigationContainer>
+        <HomeStack.Screen name="ProductExpanded" component={ProductExpanded} options={{ title: 'Product' }}/>
+      </HomeStack.Navigator>
   );
 
 
